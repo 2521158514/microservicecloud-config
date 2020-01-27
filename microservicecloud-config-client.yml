@@ -5,26 +5,29 @@ spring:
 
 ---
 server:
-  port: 8201
+    port: 8201
+
 spring:
-    profiles: dev #开发环境
+    profiles: dev
     application:
         name: microservicecloud-config-client
-eureka: 
-  client: 
-    service-url: 
-      #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
-      defaultZone: http://eureka-dev.com:7001/eureka/
 
+eureka:
+    client:
+        service-url:
+            defaultZone: http://eureka-dev.com:7001/eureka/
+        
 ---
 server:
-  port: 8202
+    port: 8202
+
 spring:
-    profiles: test #测试环境
+    profiles: test
     application:
         name: microservicecloud-config-client
-eureka: 
-  client: 
-    service-url: 
-      #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
-      defaultZone: http://eureka-test.com:7001/eureka/
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://eureka-test.com:7001/eureka/        
+#UTF8格式保存
